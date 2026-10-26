@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.env
+students.db
+*.sqlite
+*.sqlite3
+.vscode/
+.idea/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+app_before_ruff/
+tests_before_ruff/
+# Archived local implementation
+app/main_before_router_cleanup.py
