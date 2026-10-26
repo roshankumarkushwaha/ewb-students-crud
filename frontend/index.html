@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>Student Management</h1>
+            <p>Manage student records in one place</p>
+        </div>
+        <span class="status">
+            <span class="status-dot"></span>
+            API Connected
+        </span>
+    </header>
+
+    <main class="container">
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Backend</p>
+                <h2 class="backend-label">FastAPI</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Add a Student</h2>
+                    <p>Enter the student's details below.</p>
+                </div>
+            </div>
+
+            <form id="studentForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="name">Full Name *</label>
+                        <input id="name" name="name" required
+                               placeholder="e.g. Asha Sharma">
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email *</label>
+                        <input id="email" name="email" type="email" required
+                               placeholder="student@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="date_of_birth">Date of Birth *</label>
+                        <input id="date_of_birth" name="date_of_birth"
+                               type="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone"
+                               placeholder="Phone number">
+                    </div>
+
+                    <div class="field">
+                        <label for="course">Course</label>
+                        <input id="course" name="course"
+                               placeholder="e.g. Computer Science">
+                    </div>
+
+                    <div class="field">
+                        <label for="enrollment_date">Enrollment Date</label>
+                        <input id="enrollment_date" name="enrollment_date"
+                               type="date">
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="2"
+                                  placeholder="Student address"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitButton">
+                        Add Student
+                    </button>
+                    <button type="reset" class="secondary-button">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+
+            <p id="formMessage" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="list-heading">
+                <div>
+                    <h2>Student Records</h2>
+                    <p>View and manage students stored by your API.</p>
+                </div>
+                <button id="refreshButton" class="secondary-button"
+                        type="button">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="listMessage" role="status" aria-live="polite"></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td colspan="6">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Student Management System · Powered by FastAPI
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
